@@ -4,107 +4,35 @@
 <head>
     <base href="../../">
     <meta charset="utf-8">
-    <meta name="author" content="Softnio">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="@@page-discription">
-    <!-- Fav Icon  -->
-   
-    <!-- Page Title  -->
-    <title>VisDemo-OP</title>
-    <!-- StyleSheets  -->
-    <link rel="stylesheet" href="css/dashlite.css?ver=1.4.0">
-    <link id="skin-default" rel="stylesheet" href="css/theme.css?ver=1.4.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-
-
-	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
-		#map {
-			width: 100%;
-			height: 100%;
-		}
-
-    input[type=checkbox] {
-    transform: scale(1.5);
-}
-	</style>
-
-
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 
-<body class="nk-body npc-covid has-sidebar has-sidebar-short ui-clean ui-rounder">
+<body class="nk-body npc-invest bg-lighter ">
     <div class="nk-app-root">
-        <!-- main @s -->
-        <div class="nk-main" style="background-color: whitesmoke">
-           
-            <!-- wrap @s -->
-            <div class="nk-wrap ">
-              
-               
-                <!-- content @s -->
-                <div class="nk-content ">
-                    <div class="container-fluid">
-                        <div class="nk-content-body">
-                            <div class="nk-block-head nk-block-head-sm">
-                                <div class="nk-block-between flex-wrap g-1 align-start">
-                                   
-                                    <div class="nk-block-head-content">
-                                        <p class="note-text">Updated: August 30, 2021 12:30 (GMT +6)</p>
-                                    </div>
-                                    <button type="button" onclick="loadXMLDoc()">datas</button>
-                                    <div id="myDiv"></div>
-                                </div>
-                            </div><!-- .nk-block-head -->
-                           
-                        </div>
-                    </div>
-                </div>
-                <!-- content @e -->
-              
-            </div>
-            <!-- wrap @e -->
-        </div>
-        <!-- main @e -->
+        <!-- wrap @s -->
+      sdfa7896 ---- 
     </div>
-
-
-
-    <script type="text/javascript">
-        function loadXMLDoc()
-        {
-            var xmlhttp;
-            if (window.XMLHttpRequest)
-                {// code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp=new XMLHttpRequest();
-                }
-            else
-                {// code for IE6, IE5
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                    {
-                    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-                    }
-                }
-            xmlhttp.open("GET","http://130.230.18.16:8088/api/clients/wks-96445-mac.ad.tuni.fi/30602/",true);
-            xmlhttp.send();
-
-            
-        }
-
-
-    </script>
+    <div id="test"></div>
+    <button type="button" onclick="closeConnection()">off</button>
+    <!-- app-root @e -->
   
+     <script type="text/javascript">
 
+         var processID = self.setInterval("loadXMLDoc()",1000);
 
-   
+         function loadXMLDoc(){
+            var url3 ="http://localhost:8088/api/clients/wks-96445-mac.ad.tuni.fi/30602/";
+            $.get(url3,function(data){
+            var da = JSON.stringify(data);
+            //alert(JSON.stringify(data));
+            document.getElementById("test").innerHTML= da;
+        }); 
+    }
 
-   
+    function closeConnection() {
+	    window.clearInterval(processID);  
+    }
+    </script>
 </body>
 </html>
