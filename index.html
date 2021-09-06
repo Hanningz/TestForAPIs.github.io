@@ -11,7 +11,7 @@
 <body class="nk-body npc-invest bg-lighter ">
     <div class="nk-app-root">
         <!-- wrap @s -->
-      sdfa7896 ---- 
+      sdf ---- 
     </div>
    
     <button type="button" onclick="closeConnection()">off</button>
@@ -24,8 +24,10 @@
          function loadXMLDoc(){
             var url3 ="https://raw.githubusercontent.com/Hanningz/practices-for-Visualization-/master/data.json";
             $.get(url3,function(data){
-            
-            alert(data);
+              var obj = JSON.parse(data);
+              var idx = obj.content.instances[0].resources[0].value;
+	      var SecL = JSON.stringify(idx);    
+            	alert(SecL);
            
         }); 
     }
