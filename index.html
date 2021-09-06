@@ -11,9 +11,9 @@
 <body class="nk-body npc-invest bg-lighter ">
     <div class="nk-app-root">
         <!-- wrap @s -->
-      sdf ---- 
+      sdftest ---- 
     </div>
-   
+    <div id="test"></div>
     <button type="button" onclick="closeConnection()">off</button>
     <!-- app-root @e -->
   
@@ -22,12 +22,14 @@
          var processID = self.setInterval("loadXMLDoc()",1000);
 
          function loadXMLDoc(){
-            var url3 ="https://raw.githubusercontent.com/Hanningz/practices-for-Visualization-/master/data.json";
+            var url3 ="http://localhost:8088/api/clients/wks-96445-mac.ad.tuni.fi/30601/";
             $.get(url3,function(data){
               var obj = JSON.parse(data);
               var idx = obj.content.instances[0].resources[0].value;
-	      var SecL = JSON.stringify(idx);    
-            	alert(SecL);
+	      var SecL = JSON.stringify(idx);  
+		    
+	      document.getElementById("test").innerHTML= SecL;    
+            	//alert(SecL);
            
         }); 
     }
