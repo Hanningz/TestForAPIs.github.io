@@ -9,7 +9,7 @@
 
    
     <!-- Page Title  -->
-    <title>api-test1</title>
+    <title>api-test12</title>
     <!-- StyleSheets  -->
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -66,7 +66,7 @@
 	    
      async function postNames1() {
        
-	     const object = {"id":3,"value":"test and see"};
+	     const object ={"id":1,"resources":[{"id":1,"value":true},{"id":2,"value":"fine"},{"id":3,"value":"test and see"},{"id":4,"value":"2021-09-08T16:35:00+03:00"};
   	     const response = await fetch('http://localhost:8088/api/clients/wks-96445-mac.ad.tuni.fi/30602', {
              method: 'POST',
              body: JSON.stringify(object)
