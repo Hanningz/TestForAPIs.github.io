@@ -9,7 +9,7 @@
 
    
     <!-- Page Title  -->
-    <title>api-test</title>
+    <title>api-test1</title>
     <!-- StyleSheets  -->
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -64,16 +64,18 @@
 
       loadNames();
 	    
-     async function loadNames1() {
+     async function postNames1() {
        
-        const response = await fetch('http://localhost:8088/api/clients/wks-96445-mac.ad.tuni.fi/30601');
-        const n = await response.json();
-       
-        alert(JSON.stringify(n.content.instances[0].resources[0].value)); 
-        
+	     const object = {"id":3,"value":"test and see"};
+  	     const response = await fetch('http://localhost:8088/api/clients/wks-96445-mac.ad.tuni.fi/30602', {
+             method: 'POST',
+             body: JSON.stringify(object)
+       });
+	    const responseText = await response.text();
+  	    alert(responseText);
       }
 
-      loadNames1();
+      postNames1();
 
       
      
