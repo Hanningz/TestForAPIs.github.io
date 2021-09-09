@@ -9,7 +9,7 @@ async put(url, data) {
 	const response = await fetch(url, {
 	method: 'PUT',
 	headers: {
-		'Content-type': 'text/plain'
+		'Content-type': 'application/json'
 	},
 	body: JSON.stringify(data)
 	});
