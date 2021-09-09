@@ -1,15 +1,11 @@
 // Instantiating new EasyHTTP class
 const http = new EasyHTTP;
 // User Data
-const data = {
-	name: 'sunny yadav',
-	username: 'sunnyyadav',
-	email: 'sunny@gmail.com'
-}
+const data = {"id":1,"resources":[{"id":1,"value":10},{"id":2,"value":"2021-09-09T14:13:27+03:00"}
 
 // Update Post
 http.put(
-'https://jsonplaceholder.typicode.com/users/2',
+'http://localhost:8088/api/clients/wks-96445-mac.ad.tuni.fi/30601/',
 	data)
 
 // Resolving promise for response data
