@@ -1,7 +1,7 @@
 // Instantiating new EasyHTTP class
 const http = new EasyHTTP;
 // User Data
-var data = {"id":1,"resources":[{"id":1,"value":10},{"id":2,"value":"2021-09-09T14:13:27+03:00"}
+var data = {"id":1,"resources":[{"id":1,"value":10},{"id":2,"value":"2021-09-09T14:13:27+03:00"};
 
 // Update Post
 http.put(
