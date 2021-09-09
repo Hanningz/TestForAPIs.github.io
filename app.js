@@ -2,8 +2,8 @@
 const http = new EasyHTTP;
 // User Data
 var data = {
-content: {"id":1,"resources":[{"id":1,"value":10},{"id":2,"value":"2021-09-09T14:13:27+03:00"}]}
-	 
+id:2,
+value:"testdata"
 };
 
 // Update Post
