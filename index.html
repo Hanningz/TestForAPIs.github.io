@@ -7,7 +7,7 @@
 		"width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible"
 			content="ie=edge">
-	<title>PUT Request11</title>
+	<title>PUT Request</title>
 </head>
 
 <body>
@@ -17,22 +17,8 @@
 	</h1>
 
 	<!-- Including library.js and app.js -->
-	<script>
-		fetch(‘https://jsonplaceholder.typicode.com/users/2', {
-		method: ‘PUT’,
-		body: JSON.stringify({
-		id: 2,
-		name: “clean room”
-}),
-headers: {
-“Content-type”: “application/json; charset=UTF-8”
-}
-})
-.then(response => response.json())
-.then(json => console.log(json))
-	
-	</script>
-	
+	<script src="library.js"></script>
+	<script src="app.js"></script>
 </body>
 
 </html>
