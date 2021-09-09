@@ -1202,9 +1202,14 @@
 
     <script type="text/javascript">
 
-var data = {username: 'example'};
+    var data = {
+      name: 'example',
+      city: "q",
+      isVillain: true,
+      friends: []
+    };
 
-fetch('http://localhost:8088/api/clients/wks-96445-mac.ad.tuni.fi/30602', {
+fetch('https://raw.githubusercontent.com/Hanningz/practices-for-Visualization-/master/testdata.json', {
   method: 'POST', 
   body: JSON.stringify(data), 
   headers: new Headers({
@@ -1212,7 +1217,7 @@ fetch('http://localhost:8088/api/clients/wks-96445-mac.ad.tuni.fi/30602', {
   })
 }).then(res => res.json())
 .catch(error => console.error('Error:', error))
-.then(response => alert('Success:', response));
+.then(response => alert('Success6:', response.json()));
 
 
     
